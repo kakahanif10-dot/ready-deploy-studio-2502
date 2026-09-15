@@ -27,6 +27,7 @@ import { createOpenAICompatible } from '@ai-sdk/openai-compatible'
 function geminiApiKey(): string {
   return (
     process.env['VITE_GEMINI_API_KEY'] ??
+    process.env['GEMINI_API_KEY'] ??
     (import.meta as any).env?.VITE_GEMINI_API_KEY ??
     ''
   )
