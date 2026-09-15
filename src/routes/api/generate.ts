@@ -5,7 +5,7 @@
 // The reasoning core runs on the AI SDK with Google Gemini.
 
 import { createFileRoute } from '@tanstack/react-router'
-import { generateText } from 'ai'
+import { geminiGenerateText } from '@/lib/gemini.server'
 import {
   TEMPLATE_PALETTES,
   TEMPLATES,
@@ -17,30 +17,6 @@ import {
 } from '@/lib/design'
 
 
-
-// Reasoning core runs on the AI SDK through the Vercel AI Gateway, which is
-// zero-config in v0 previews and Vercel deployments (no provider API key). We
-// pass plain "provider/model" Gateway IDs straight to generateText.
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible'
-
-// Reasoning core talks directly to Google Gemini (OpenAI-compatible endpoint).
-function geminiApiKey(): string {
-  return (
-    process.env['VITE_GEMINI_API_KEY'] ??
-    process.env['GEMINI_API_KEY'] ??
-    (import.meta as any).env?.VITE_GEMINI_API_KEY ??
-    ''
-  )
-}
-
-function gatewayModel(id: string) {
-  const provider = createOpenAICompatible({
-    name: 'google-gemini',
-    baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai',
-    apiKey: geminiApiKey(),
-  })
-  return provider.chatModel(id)
-}
 
 const MODEL = 'gemini-3.6-flash'
 // Ordered fallbacks tried when the primary model is overloaded or rate-limited.
@@ -539,9 +515,9 @@ async function callEngine(userPrompt: string): Promise<string> {
   let lastError: unknown = null
   for (const model of MODEL_FALLBACKS) {
     try {
-      const { text } = await generateText({
-        // Plain "provider/model" Gateway ID — zero-config auth in v0/Vercel.
-        model: gatewayModel(model),
+      const text = await geminiGenerateText({
+        // Direct Google Gemini call, authenticated with VITE_GEMINI_API_KEY.
+        model,
         system: SYSTEM_INSTRUCTION,
         // Few-shot anchors are prepended to the conversation immediately before
         // the live user payload so the runtime mimics production-grade depth.

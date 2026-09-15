@@ -5,33 +5,10 @@
 // degrades to a coherent local reply so the consultant never goes silent.
 
 import { createFileRoute } from '@tanstack/react-router'
-import { streamText, type ModelMessage } from 'ai'
-
-
+import { geminiStreamText, type GeminiTurn } from '@/lib/gemini.server'
 
 // Ordered fallbacks tried when the primary model is overloaded or rate-limited.
 const MODEL_FALLBACKS = ['gemini-3.6-flash', 'gemini-flash-latest'] as const
-
-import { createOpenAICompatible } from '@ai-sdk/openai-compatible'
-
-// Reasoning core talks directly to Google Gemini (OpenAI-compatible endpoint).
-function geminiApiKey(): string {
-  return (
-    process.env['VITE_GEMINI_API_KEY'] ??
-    process.env['GEMINI_API_KEY'] ??
-    (import.meta as any).env?.VITE_GEMINI_API_KEY ??
-    ''
-  )
-}
-
-function gatewayModel(id: string) {
-  const provider = createOpenAICompatible({
-    name: 'google-gemini',
-    baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai',
-    apiKey: geminiApiKey(),
-  })
-  return provider.chatModel(id)
-}
 
 type ChatTurn = { role: 'user' | 'assistant'; text: string }
 type SpecContext = {
@@ -58,7 +35,7 @@ Rules:
 - Never return fenced code blocks or raw JSON. Just talk.`
 }
 
-function toModelMessages(turns: ChatTurn[]): ModelMessage[] {
+function toModelMessages(turns: ChatTurn[]): GeminiTurn[] {
   return turns
     .filter((t) => t && typeof t.text === 'string' && t.text.trim())
     .map((t) => ({
@@ -78,15 +55,15 @@ async function streamReply(
 ): Promise<void> {
   for (const model of MODEL_FALLBACKS) {
     try {
-      const result = streamText({
-        model: gatewayModel(model),
+      const deltas = geminiStreamText({
+        model,
         system: systemPrompt(spec),
         messages: toModelMessages(turns),
         temperature: 0.7,
         maxOutputTokens: 512,
       })
       let streamed = false
-      for await (const delta of result.textStream) {
+      for await (const delta of deltas) {
         if (delta) {
           streamed = true
           controller.enqueue(encoder.encode(delta))
