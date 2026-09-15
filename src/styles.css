@@ -181,3 +181,6 @@
 .thin-scroll::-webkit-scrollbar-track {
   background: transparent;
 }
+
+/* Hide the Lovable badge everywhere */
+#lovable-badge { display: none !important; }
