@@ -10,16 +10,24 @@ import { streamText, type ModelMessage } from 'ai'
 
 
 // Ordered fallbacks tried when the primary model is overloaded or rate-limited.
-const MODEL_FALLBACKS = ['google/gemini-2.5-flash', 'google/gemini-2.0-flash'] as const
+const MODEL_FALLBACKS = ['gemini-2.5-flash', 'gemini-2.0-flash'] as const
 
 import { createOpenAICompatible } from '@ai-sdk/openai-compatible'
 
-// Reasoning core runs through the Lovable AI Gateway (OpenAI-compatible).
+// Reasoning core talks directly to Google Gemini (OpenAI-compatible endpoint).
+function geminiApiKey(): string {
+  return (
+    process.env['VITE_GEMINI_API_KEY'] ??
+    (import.meta as any).env?.VITE_GEMINI_API_KEY ??
+    ''
+  )
+}
+
 function gatewayModel(id: string) {
   const provider = createOpenAICompatible({
-    name: 'lovable',
-    baseURL: 'https://ai.gateway.lovable.dev/v1',
-    apiKey: process.env['LOVABLE_API_KEY'] ?? '',
+    name: 'google-gemini',
+    baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai',
+    apiKey: geminiApiKey(),
   })
   return provider.chatModel(id)
 }

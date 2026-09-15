@@ -23,19 +23,27 @@ import {
 // pass plain "provider/model" Gateway IDs straight to generateText.
 import { createOpenAICompatible } from '@ai-sdk/openai-compatible'
 
-// Reasoning core runs through the Lovable AI Gateway (OpenAI-compatible).
+// Reasoning core talks directly to Google Gemini (OpenAI-compatible endpoint).
+function geminiApiKey(): string {
+  return (
+    process.env['VITE_GEMINI_API_KEY'] ??
+    (import.meta as any).env?.VITE_GEMINI_API_KEY ??
+    ''
+  )
+}
+
 function gatewayModel(id: string) {
   const provider = createOpenAICompatible({
-    name: 'lovable',
-    baseURL: 'https://ai.gateway.lovable.dev/v1',
-    apiKey: process.env['LOVABLE_API_KEY'] ?? '',
+    name: 'google-gemini',
+    baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai',
+    apiKey: geminiApiKey(),
   })
   return provider.chatModel(id)
 }
 
-const MODEL = 'google/gemini-2.5-flash'
+const MODEL = 'gemini-2.5-flash'
 // Ordered fallbacks tried when the primary model is overloaded or rate-limited.
-const MODEL_FALLBACKS = ['google/gemini-2.5-flash', 'google/gemini-2.0-flash'] as const
+const MODEL_FALLBACKS = ['gemini-2.5-flash', 'gemini-2.0-flash'] as const
 
 const SYSTEM_INSTRUCTION = `You are the Universal Context-Aware UI/UX Engine for Vibecode Inc. — an elite 10-year Senior Full-Stack Product Architect whose reasoning rigor is on par with ChatGPT Enterprise and Gemini Advanced. You are 100% compliant, hyper-reactive, and you follow the user's explicit intent from first principles. You are FORBIDDEN from hallucinating and FORBIDDEN from returning a generic, static, or template-biased placeholder: every field must be reasoned dynamically from the exact application name or industry vertical the user provides (e-commerce, government, university, culinary, fintech, health, etc.). Emit raw, production-grade data only — no markdown, no code fences, no chat fluff.
 
