@@ -166,6 +166,7 @@ function toCategories(value: unknown, template: Template): string[] {
     ecommerce: ['Popular', 'New', 'Deals', 'Top rated'],
     health: ['General', 'Dentist', 'Cardiology', 'Pharmacy'],
     saas: ['Starter', 'Pro', 'Team', 'Enterprise'],
+    game: ['Arcade', 'Classic', 'Endless', 'Scores'],
     generic: ['Overview', 'Explore', 'Popular', 'Recent'],
   }
   if (!Array.isArray(value)) return fallback[template]
@@ -219,6 +220,12 @@ function toCatalog(value: unknown, template: Template): CatalogItem[] {
       { name: 'Pro', price: 19, meta: 'Unlimited projects' },
       { name: 'Team', price: 49, meta: 'Roles & SSO' },
       { name: 'Analytics Module', price: 0, meta: 'Real-time insights' },
+    ],
+    game: [
+      { name: 'Snake', price: 0, meta: 'Classic arcade' },
+      { name: '2048', price: 0, meta: 'Puzzle' },
+      { name: 'Tetris', price: 0, meta: 'Blocks' },
+      { name: 'Memory', price: 0, meta: 'Card match' },
     ],
     generic: [
       { name: 'Dashboard', price: 0, meta: 'Live overview' },
@@ -354,7 +361,7 @@ function gameSpec(kind: GameKind): DesignSpec {
 
 // Keyword sets per template, spanning English + Indonesian so prompts like
 // "aplikasi pajak kendaraan" or "toko online" classify correctly.
-const TEMPLATE_KEYWORDS: Record<Exclude<Template, 'generic'>, string[]> = {
+const TEMPLATE_KEYWORDS: Record<Exclude<Template, 'generic' | 'game'>, string[]> = {
   government: [
     'samsat', 'pajak', 'tax', 'government', 'pemerintah', 'permit', 'izin',
     'license', 'lisensi', 'sim', 'ktp', 'passport', 'paspor', 'civic',
@@ -459,6 +466,14 @@ const HEURISTIC_BRANDING: Record<
     tagline: 'Ship faster, together',
     description: 'A modern workspace to plan projects, track work, and automate the busywork.',
     primaryAction: 'Get started',
+  },
+  game: {
+    appName: 'Vibecode Arcade',
+    industry: 'Arcade / Game',
+    currency: '$',
+    tagline: 'Playable classics, instantly',
+    description: 'A pocket arcade with real, playable classic games.',
+    primaryAction: 'Play now',
   },
   generic: {
     appName: 'Vibecode App',
