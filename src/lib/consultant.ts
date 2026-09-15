@@ -405,7 +405,7 @@ function createZip(files: { name: string; content: string }[]): Blob {
   pushU32(eocd, centralStart)
   pushU16(eocd, 0) // comment length
 
-  return new Blob([...localParts, ...centralParts, Uint8Array.from(eocd)], {
+  return new Blob([...localParts, ...centralParts, Uint8Array.from(eocd)] as BlobPart[], {
     type: 'application/zip',
   })
 }

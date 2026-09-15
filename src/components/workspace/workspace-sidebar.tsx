@@ -46,6 +46,7 @@ const SCREEN_MODULES: Record<Template, string[]> = {
   ecommerce: ['storefront.tsx', 'search.tsx', 'cart-drawer.tsx', 'profile.tsx'],
   health: ['services.tsx', 'find-provider.tsx', 'booking.tsx', 'profile.tsx'],
   saas: ['plans.tsx', 'modules.tsx', 'usage.tsx', 'account.tsx'],
+  game: ['game-canvas.tsx', 'hud.tsx', 'scores.tsx', 'profile.tsx'],
   generic: ['home.tsx', 'explore.tsx', 'profile.tsx'],
 }
 
