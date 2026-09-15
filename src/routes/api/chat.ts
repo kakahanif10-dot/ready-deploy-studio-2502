@@ -10,7 +10,7 @@ import { streamText, type ModelMessage } from 'ai'
 
 
 // Ordered fallbacks tried when the primary model is overloaded or rate-limited.
-const MODEL_FALLBACKS = ['gemini-2.5-flash', 'gemini-2.0-flash'] as const
+const MODEL_FALLBACKS = ['gemini-3.6-flash', 'gemini-flash-latest'] as const
 
 import { createOpenAICompatible } from '@ai-sdk/openai-compatible'
 
