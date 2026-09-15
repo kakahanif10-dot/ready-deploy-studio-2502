@@ -1,4 +1,3 @@
-'use client'
 
 import { motion } from 'framer-motion'
 import { Eye, Code2, Rocket, GitBranch, ShieldCheck, Zap } from 'lucide-react'

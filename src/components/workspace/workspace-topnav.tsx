@@ -1,4 +1,3 @@
-'use client'
 
 import { motion } from 'framer-motion'
 import { ChevronDown, Rocket, Share2, Loader2, Check } from 'lucide-react'

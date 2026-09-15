@@ -1,4 +1,3 @@
-'use client'
 
 /* ------------------------------------------------------------------ */
 /* Vibecode Arcade — real, playable games rendered live in the preview  */

@@ -1,7 +1,6 @@
-'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter } from '@/lib/next-router'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Loader2, Mail, Lock, User, ArrowRight, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'

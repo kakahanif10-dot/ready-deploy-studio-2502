@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from '@/components/link'
 import { VibecodeLogo } from '@/components/vibecode-logo'
 
 const COLUMNS = [
