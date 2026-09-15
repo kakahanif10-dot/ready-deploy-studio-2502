@@ -7,11 +7,10 @@ export type GeminiTurn = { role: 'user' | 'assistant'; content: string }
 
 export function geminiApiKey(): string {
   const env = (typeof process !== 'undefined' ? process.env : {}) as Record<string, string | undefined>
-  const viteEnv = ((import.meta as any)?.env ?? {}) as Record<string, string | undefined>
   return (
-    env['VITE_GEMINI_API_KEY'] ??
-    viteEnv['VITE_GEMINI_API_KEY'] ??
-    env['GEMINI_API_KEY'] ??
+    env['VITE_GEMINI_API_KEY'] ||
+    import.meta.env.VITE_GEMINI_API_KEY ||
+    env['GEMINI_API_KEY'] ||
     ''
   )
 }
