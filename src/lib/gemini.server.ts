@@ -44,11 +44,25 @@ function buildBody(opts: GeminiOptions) {
   }
 }
 
+// Free-tier key safety net: some model ids are retired (404) or have a tiny
+// daily quota (429). Map them onto models that still work on a free key so the
+// agents keep answering without editing every call site.
+const MODEL_ALIASES: Record<string, string> = {
+  'gemini-2.5-flash': 'gemini-3.5-flash',
+  'gemini-2.5-flash-lite': 'gemini-3.1-flash-lite',
+  'gemini-3.6-flash': 'gemini-3.5-flash',
+  'gemini-flash-latest': 'gemini-flash-lite-latest',
+}
+
+function resolveModel(model: string): string {
+  return MODEL_ALIASES[model] ?? model
+}
+
 async function callGemini(path: string, opts: GeminiOptions, query = '') {
   const key = geminiApiKey()
   if (!key) throw new Error('Missing VITE_GEMINI_API_KEY')
 
-  const res = await fetch(`${API_BASE}/${opts.model}:${path}${query}`, {
+  const res = await fetch(`${API_BASE}/${resolveModel(opts.model)}:${path}${query}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
