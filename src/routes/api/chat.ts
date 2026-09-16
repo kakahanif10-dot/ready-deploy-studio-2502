@@ -8,7 +8,14 @@ import { createFileRoute } from '@tanstack/react-router'
 import { geminiStreamText, type GeminiTurn } from '@/lib/gemini.server'
 
 // Ordered fallbacks tried when the primary model is overloaded or rate-limited.
-const MODEL_FALLBACKS = ['gemini-3.6-flash', 'gemini-flash-latest'] as const
+// Note: gemini-3.6-flash has a tiny free-tier daily quota (~20 req/day), so the
+// list starts with models that keep working on a free key.
+const MODEL_FALLBACKS = [
+  'gemini-3.5-flash',
+  'gemini-3.1-flash-lite',
+  'gemini-3.6-flash',
+  'gemini-flash-latest',
+] as const
 
 type ChatTurn = { role: 'user' | 'assistant'; text: string }
 type SpecContext = {
@@ -52,7 +59,8 @@ async function streamReply(
   turns: ChatTurn[],
   controller: ReadableStreamDefaultController,
   encoder: TextEncoder,
-): Promise<void> {
+): Promise<string> {
+  const errors: string[] = []
   for (const model of MODEL_FALLBACKS) {
     try {
       const deltas = geminiStreamText({
@@ -69,18 +77,22 @@ async function streamReply(
           controller.enqueue(encoder.encode(delta))
         }
       }
-      if (streamed) return
+      if (streamed) return `gemini:${model}`
     } catch (err) {
-      console.log('[v0] Chat model failed:', model, (err as Error)?.message)
+      const msg = (err as Error)?.message ?? String(err)
+      errors.push(`${model}: ${msg}`)
+      console.log('[v0] Chat model failed:', model, msg)
     }
   }
 
   // Every model failed — degrade to a local reply, streamed for a human feel.
+  console.error('[vibecode] All Gemini models failed, using local fallback:', errors.join(' | '))
   const reply = localReply(spec, turns)
   for (const word of reply.split(' ')) {
     controller.enqueue(encoder.encode(word + ' '))
     await new Promise((r) => setTimeout(r, 16))
   }
+  return 'local-fallback'
 }
 
 // Deterministic, context-aware fallback so the consultant always answers even
@@ -125,7 +137,8 @@ async function POST(req: Request) {
   const stream = new ReadableStream({
     async start(controller) {
       try {
-        await streamReply(spec, turns, controller, encoder)
+        const source = await streamReply(spec, turns, controller, encoder)
+        console.log('[vibecode] Chat answered by:', source)
       } catch (error) {
         console.log('[v0] Chat stream failed, using local reply:', (error as Error)?.message)
         controller.enqueue(encoder.encode(localReply(spec, turns)))
