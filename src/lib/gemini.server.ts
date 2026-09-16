@@ -7,10 +7,13 @@ export type GeminiTurn = { role: 'user' | 'assistant'; content: string }
 
 export function geminiApiKey(): string {
   const env = (typeof process !== 'undefined' ? process.env : {}) as Record<string, string | undefined>
+  // Server runtime env first (set GEMINI_API_KEY on Vercel), then the
+  // build-time inlined VITE_ vars as fallback.
   return (
+    env['GEMINI_API_KEY'] ||
+    env['GOOGLE_API_KEY'] ||
     env['VITE_GEMINI_API_KEY'] ||
     import.meta.env.VITE_GEMINI_API_KEY ||
-    env['GEMINI_API_KEY'] ||
     ''
   )
 }
@@ -56,6 +59,7 @@ async function callGemini(path: string, opts: GeminiOptions, query = '') {
 
   if (!res.ok) {
     const detail = await res.text().catch(() => '')
+    console.error(`[vibecode] Gemini ${opts.model} ${path} -> ${res.status}: ${detail.slice(0, 300)}`)
     throw new Error(`Gemini ${res.status}: ${detail.slice(0, 300)}`)
   }
   return res
