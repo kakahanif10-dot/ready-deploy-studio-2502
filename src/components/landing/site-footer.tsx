@@ -47,7 +47,7 @@ export function SiteFooter() {
       </div>
 
       <div className="mx-auto mt-12 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-border pt-8 text-sm text-muted-foreground sm:flex-row">
-        <p>© {new Date().getFullYear()} Vibecode Inc. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} AI Labs Inc. All rights reserved.</p>
         <div className="flex items-center gap-6">
           <Link href="#" className="transition-colors hover:text-foreground">
             Privacy

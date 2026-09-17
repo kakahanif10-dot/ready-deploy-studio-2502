@@ -1,8 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-const title = 'Sign in — Vibecode Inc.'
+const title = 'Sign in — AI Labs Inc.'
 const description =
-  'Sign in to Vibecode Inc. and turn a plain-language idea into a deployable app in minutes.'
+  'Sign in to AI Labs Inc. and turn a plain-language idea into a deployable app in minutes.'
 
 export const Route = createFileRoute('/login')({
   head: () => ({

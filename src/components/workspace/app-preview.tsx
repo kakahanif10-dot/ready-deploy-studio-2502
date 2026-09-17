@@ -1721,7 +1721,7 @@ function AwaitingState() {
         <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-white/5">
           <span className="h-5 w-5 rounded-md bg-white/80" />
         </div>
-        <p className="text-sm font-semibold tracking-[0.25em] text-white/90">VIBECODE INC.</p>
+        <p className="text-sm font-semibold tracking-[0.25em] text-white/90">AI LABS INC.</p>
       </motion.div>
       <p className="max-w-[15rem] text-xs leading-relaxed text-white/45">
         Awaiting your design blueprint. Type a prompt on the left to witness the genesis of your

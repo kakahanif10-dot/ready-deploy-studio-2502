@@ -37,7 +37,7 @@ export function SiteHeader() {
             'border-border bg-background/70 backdrop-blur-xl glow-border',
         )}
       >
-        <Link href="/" aria-label="Vibecode Inc. home">
+        <Link href="/" aria-label="AI Labs Inc. home">
           <VibecodeLogo />
         </Link>
 

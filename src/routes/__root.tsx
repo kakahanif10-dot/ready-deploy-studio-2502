@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "color-scheme", content: "dark" },
       { name: "theme-color", content: "#0A0A0A" },
-      { title: "Vibecode Inc. — Build software with AI" },
+      { title: "AI Labs Inc. — Build software with AI" },
       {
         name: "description",
         content:

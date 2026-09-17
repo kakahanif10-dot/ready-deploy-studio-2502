@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-const title = 'Workspace — Vibecode Inc.'
+const title = 'Workspace — AI Labs Inc.'
 const description =
   'Chat with the AI consultant, compile your app spec and preview it live on phone, tablet and desktop.'
 

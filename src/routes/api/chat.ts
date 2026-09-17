@@ -1,4 +1,4 @@
-// VIBECODE INC. — Conversational consultant endpoint.
+// AI LABS INC. — Conversational consultant endpoint.
 // Powers real, responsive back-and-forth chat with the AI consultant (distinct
 // from /api/generate, which compiles a full app spec). Runs on the AI SDK
 // through the Vercel AI Gateway (zero-config auth, no provider key) and always
@@ -30,7 +30,7 @@ function systemPrompt(spec: SpecContext): string {
     ? `The user is currently working on an app called "${spec.appName}" in the "${spec.industry}" vertical (template: ${spec.template}). Ground your answers in that app when relevant.`
     : `The user has not generated an app yet. Encourage them to describe the product they want to build.`
 
-  return `You are the Vibecode Inc. AI Consultant — a warm, sharp, senior product engineer having a live chat with a builder. ${ctx}
+  return `You are the AI Labs Inc. AI Consultant — a warm, sharp, senior product engineer having a live chat with a builder. ${ctx}
 
 Rules:
 - Talk like a real person, not a manual. Use natural, warm phrasing, contractions, and a bit of personality. React to what the user actually said.
