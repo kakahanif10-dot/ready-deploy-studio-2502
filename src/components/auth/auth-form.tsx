@@ -43,7 +43,7 @@ export function AuthForm() {
         </h1>
         <p className="mt-1.5 text-sm text-muted-foreground">
           {mode === 'signup'
-            ? 'Start building software with Vibecode in seconds.'
+            ? 'Start building software with AI Labs in seconds.'
             : 'Sign in to return to your workspace.'}
         </p>
 
@@ -140,7 +140,7 @@ export function AuthForm() {
       </div>
 
       <p className="mt-5 text-center text-xs leading-relaxed text-muted-foreground">
-        By continuing you agree to Vibecode&apos;s Terms of Service and Privacy
+        By continuing you agree to AI Labs&apos; Terms of Service and Privacy
         Policy.
       </p>
     </div>

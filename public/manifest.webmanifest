@@ -1,7 +1,7 @@
 {
-  "name": "Vibecode Layer 3",
-  "short_name": "Vibecode",
-  "description": "Design apparel and app brands on Layer 3, preview live on an Android simulator, and install straight to your device as an app.",
+  "name": "AI Labs",
+  "short_name": "AI Labs",
+  "description": "Describe an idea, generate a complete app, preview it live, and export the source with AI Labs.",
   "start_url": "/workspace",
   "scope": "/",
   "display": "standalone",
@@ -9,8 +9,8 @@
   "background_color": "#0a0a0a",
   "theme_color": "#0a0a0a",
   "icons": [
-    { "src": "/vibecode-logo.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "/vibecode-logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "/vibecode-logo.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    { "src": "/ai-labs-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/ai-labs-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/ai-labs-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }

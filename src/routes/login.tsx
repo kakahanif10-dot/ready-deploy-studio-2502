@@ -14,13 +14,14 @@ export const Route = createFileRoute('/login')({
       { property: 'og:type', content: 'website' },
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
+    links: [{ rel: 'canonical', href: '/login' }],
   }),
   component: LoginPage,
 })
 
 import Link from '@/components/link'
 import { ArrowLeft } from 'lucide-react'
-import { VibecodeLogo } from '@/components/vibecode-logo'
+import { AiLabsLogo } from '@/components/ai-labs-logo'
 import { AuthForm } from '@/components/auth/auth-form'
 
 function LoginPage() {
@@ -29,7 +30,7 @@ function LoginPage() {
       {/* Left brand panel */}
       <div className="relative hidden w-1/2 flex-col justify-between overflow-hidden border-r border-border p-10 lg:flex">
         <Link href="/" className="relative">
-          <VibecodeLogo />
+          <AiLabsLogo />
         </Link>
 
         <div className="relative max-w-md">
@@ -66,7 +67,7 @@ function LoginPage() {
         </Link>
 
         <div className="mb-8 lg:hidden">
-          <VibecodeLogo />
+          <AiLabsLogo />
         </div>
 
         <AuthForm />

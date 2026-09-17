@@ -1,5 +1,5 @@
 import Link from '@/components/link'
-import { VibecodeLogo } from '@/components/vibecode-logo'
+import { AiLabsLogo } from '@/components/ai-labs-logo'
 
 const COLUMNS = [
   {
@@ -21,7 +21,7 @@ export function SiteFooter() {
     <footer className="relative border-t border-border px-4 py-16">
       <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <VibecodeLogo />
+          <AiLabsLogo />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
             The AI software generator. Describe it, preview it, ship it.
           </p>

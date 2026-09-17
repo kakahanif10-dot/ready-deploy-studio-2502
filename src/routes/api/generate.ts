@@ -453,7 +453,7 @@ const HEURISTIC_BRANDING: Record<
     primaryAction: 'Get started',
   },
   game: {
-    appName: 'Vibecode Arcade',
+    appName: 'AI Labs Arcade',
     industry: 'Arcade / Game',
     currency: '$',
     tagline: 'Playable classics, instantly',
@@ -461,7 +461,7 @@ const HEURISTIC_BRANDING: Record<
     primaryAction: 'Play now',
   },
   generic: {
-    appName: 'Vibecode App',
+    appName: 'AI Labs App',
     industry: 'Universal App',
     currency: '$',
     tagline: 'A clean, original product concept',
@@ -570,7 +570,7 @@ async function POST(req: Request) {
     return Response.json({
       success: true,
       company: 'AI Labs Inc.',
-      model: 'vibecode/arcade',
+      model: 'ai-labs/arcade',
       engine: 'arcade',
       spec: gameSpec(game),
     })
@@ -619,7 +619,7 @@ async function POST(req: Request) {
     return Response.json({
       success: true,
       company: 'AI Labs Inc.',
-      model: 'vibecode/local-heuristic',
+      model: 'ai-labs/local-heuristic',
       engine: 'local',
       spec,
     })

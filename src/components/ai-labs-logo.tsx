@@ -1,16 +1,17 @@
+import logoUrl from '@/assets/ai-labs-logo.png'
 import { cn } from '@/lib/utils'
 
-export function VibecodeMark({ className }: { className?: string }) {
+export function AiLabsMark({ className }: { className?: string }) {
   return (
     <img
-      src="/vibecode-logo.png"
-      alt="Vibecode"
+      src={logoUrl}
+      alt="AI Labs"
       className={cn('inline-block object-contain', className)}
     />
   )
 }
 
-export function VibecodeLogo({
+export function AiLabsLogo({
   className,
   markClassName,
   wordmark = true,
@@ -21,10 +22,10 @@ export function VibecodeLogo({
 }) {
   return (
     <span className={cn('inline-flex items-center gap-2.5', className)}>
-      <VibecodeMark className={cn('h-8 w-8', markClassName)} />
+      <AiLabsMark className={cn('h-8 w-8', markClassName)} />
       {wordmark && (
-        <span className="text-[15px] font-semibold tracking-tight text-foreground">
-          Vibecode
+        <span className="text-[15px] font-semibold text-foreground">
+          AI Labs
           <span className="text-muted-foreground"> Inc.</span>
         </span>
       )}

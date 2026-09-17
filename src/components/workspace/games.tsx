@@ -1,6 +1,6 @@
 
 /* ------------------------------------------------------------------ */
-/* Vibecode Arcade — real, playable games rendered live in the preview  */
+/* AI Labs Arcade — real, playable games rendered live in the preview  */
 /* Snake · Tetris · Dino. Each is a self-contained React component with  */
 /* keyboard + on-screen touch controls, scoring, pause and restart.     */
 /* ------------------------------------------------------------------ */

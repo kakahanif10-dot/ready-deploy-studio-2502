@@ -83,7 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Vibecode is the AI software generator. Describe your idea in plain language and watch it become a real, deployable app.",
+          "AI Labs is the AI software generator. Describe your idea in plain language and watch it become a real, deployable app.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -100,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
-      { rel: "apple-touch-icon", href: "/vibecode-logo.png" },
+      { rel: "apple-touch-icon", href: "/ai-labs-icon-192.png" },
       { rel: "manifest", href: "/manifest.webmanifest" },
     ],
   }),

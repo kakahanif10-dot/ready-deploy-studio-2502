@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 const STEPS = [
   {
     step: 'Describe',
-    title: 'Tell Vibecode your idea',
-    body: 'Write a prompt in plain language. Attach a screenshot or sketch if you have one — Vibecode understands both.',
+    title: 'Tell AI Labs your idea',
+    body: 'Write a prompt in plain language. Attach a screenshot or sketch if you have one — AI Labs understands both.',
   },
   {
     step: 'Generate',

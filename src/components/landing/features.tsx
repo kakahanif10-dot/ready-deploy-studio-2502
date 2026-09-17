@@ -40,7 +40,7 @@ export function Features() {
     <section id="features" className="relative px-4 py-28">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-medium text-primary">Why Vibecode</p>
+          <p className="text-sm font-medium text-primary">Why AI Labs</p>
           <h2 className="mt-3 text-balance text-4xl font-semibold tracking-tight md:text-5xl">
             Everything you need to go from idea to production
           </h2>

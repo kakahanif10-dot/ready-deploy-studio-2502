@@ -86,7 +86,7 @@ async function streamReply(
   }
 
   // Every model failed — degrade to a local reply, streamed for a human feel.
-  console.error('[vibecode] All Gemini models failed, using local fallback:', errors.join(' | '))
+  console.error('[ai-labs] All Gemini models failed, using local fallback:', errors.join(' | '))
   const reply = localReply(spec, turns)
   for (const word of reply.split(' ')) {
     controller.enqueue(encoder.encode(word + ' '))
@@ -111,7 +111,7 @@ function localReply(spec: SpecContext, turns: ChatTurn[]): string {
       : `Happy to help — describe the product you have in mind (industry, audience, key action) and I'll brand and compile a working preview.`
   }
   if (/\b(hi|hello|hey|halo|hai)\b/.test(last)) {
-    return `Hey! I'm your Vibecode consultant. Describe an app idea and I'll detect the industry, brand it, and build a live preview.`
+    return `Hey! I'm your AI Labs consultant. Describe an app idea and I'll detect the industry, brand it, and build a live preview.`
   }
   return spec.hasContent
     ? `Understood. Tell me what you'd like to adjust on ${app} and I'll take it from there.`
@@ -138,7 +138,7 @@ async function POST(req: Request) {
     async start(controller) {
       try {
         const source = await streamReply(spec, turns, controller, encoder)
-        console.log('[vibecode] Chat answered by:', source)
+        console.log('[ai-labs] Chat answered by:', source)
       } catch (error) {
         console.log('[v0] Chat stream failed, using local reply:', (error as Error)?.message)
         controller.enqueue(encoder.encode(localReply(spec, turns)))

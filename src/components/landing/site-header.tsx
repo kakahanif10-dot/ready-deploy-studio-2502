@@ -2,7 +2,7 @@
 import Link from '@/components/link'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { VibecodeLogo } from '@/components/vibecode-logo'
+import { AiLabsLogo } from '@/components/ai-labs-logo'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
@@ -38,7 +38,7 @@ export function SiteHeader() {
         )}
       >
         <Link href="/" aria-label="AI Labs Inc. home">
-          <VibecodeLogo />
+          <AiLabsLogo />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">

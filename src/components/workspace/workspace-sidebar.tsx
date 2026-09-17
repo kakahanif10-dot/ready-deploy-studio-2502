@@ -17,7 +17,7 @@ import {
   ChevronRight,
   ChevronDown,
 } from 'lucide-react'
-import { VibecodeMark } from '@/components/vibecode-logo'
+import { AiLabsMark } from '@/components/ai-labs-logo'
 import { cn } from '@/lib/utils'
 import type { DesignSpec, Template } from '@/lib/design'
 
@@ -119,7 +119,7 @@ export function WorkspaceSidebar({
       {/* Brand + collapse */}
       <div className="flex h-14 items-center justify-between px-3">
         <div className="flex items-center gap-2 overflow-hidden">
-          <VibecodeMark className="h-8 w-8 shrink-0" />
+          <AiLabsMark className="h-8 w-8 shrink-0" />
           <AnimatePresence>
             {!collapsed && (
               <motion.span
@@ -128,7 +128,7 @@ export function WorkspaceSidebar({
                 exit={{ opacity: 0 }}
                 className="whitespace-nowrap text-sm font-semibold tracking-tight"
               >
-                Vibecode
+                AI Labs
               </motion.span>
             )}
           </AnimatePresence>

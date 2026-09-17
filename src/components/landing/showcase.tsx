@@ -20,7 +20,7 @@ export function Showcase() {
             <span className="h-3 w-3 rounded-full bg-muted-foreground/40" />
             <div className="mx-auto flex items-center gap-2 rounded-md border border-border bg-background/60 px-3 py-1 text-xs text-muted-foreground">
               <Circle className="h-2.5 w-2.5 fill-primary text-primary" />
-              app.vibecode.inc/preview
+              app.ailabs.inc/preview
             </div>
           </div>
 
@@ -40,7 +40,7 @@ export function Showcase() {
                   <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-primary [animation-delay:-0.1s]" />
                   <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-primary" />
                 </span>
-                Vibecode is building
+                AI Labs is building
               </div>
             </div>
 
