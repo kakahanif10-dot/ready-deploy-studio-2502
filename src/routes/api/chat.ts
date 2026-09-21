@@ -30,7 +30,7 @@ function systemPrompt(spec: SpecContext): string {
     ? `The user is currently working on an app called "${spec.appName}" in the "${spec.industry}" vertical (template: ${spec.template}). Ground your answers in that app when relevant.`
     : `The user has not generated an app yet. Encourage them to describe the product they want to build.`
 
-  return `You are the AI Labs Inc. AI Consultant — a warm, sharp, senior product engineer having a live chat with a builder. ${ctx}
+  return `You are the Purple AI Consultant — a warm, sharp, senior product engineer having a live chat with a builder. ${ctx}
 
 Rules:
 - Talk like a real person, not a manual. Use natural, warm phrasing, contractions, and a bit of personality. React to what the user actually said.
@@ -111,7 +111,7 @@ function localReply(spec: SpecContext, turns: ChatTurn[]): string {
       : `Happy to help — describe the product you have in mind (industry, audience, key action) and I'll brand and compile a working preview.`
   }
   if (/\b(hi|hello|hey|halo|hai)\b/.test(last)) {
-    return `Hey! I'm your AI Labs consultant. Describe an app idea and I'll detect the industry, brand it, and build a live preview.`
+    return `Hey! I'm your Purple consultant. Describe an app idea and I'll detect the industry, brand it, and build a live preview.`
   }
   return spec.hasContent
     ? `Understood. Tell me what you'd like to adjust on ${app} and I'll take it from there.`

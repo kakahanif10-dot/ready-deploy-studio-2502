@@ -17,7 +17,7 @@ import {
   ChevronRight,
   ChevronDown,
 } from 'lucide-react'
-import { AiLabsMark } from '@/components/ai-labs-logo'
+import { AiLabsMark } from '@/components/purple-logo'
 import { cn } from '@/lib/utils'
 import type { DesignSpec, Template } from '@/lib/design'
 
@@ -128,7 +128,7 @@ export function WorkspaceSidebar({
                 exit={{ opacity: 0 }}
                 className="whitespace-nowrap text-sm font-semibold tracking-tight"
               >
-                AI Labs
+                Purple
               </motion.span>
             )}
           </AnimatePresence>

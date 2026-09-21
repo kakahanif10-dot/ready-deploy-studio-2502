@@ -51,7 +51,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.12 }}
           className="mt-4 max-w-md text-pretty text-xs leading-relaxed text-muted-foreground"
         >
-          AI Labs is the AI software generator. Turn a plain-language idea into
+          Purple is the AI software generator. Turn a plain-language idea into
           a real, deployable app — with instant preview, live code, and one-click
           deploy.
         </motion.p>
@@ -78,7 +78,7 @@ export function Hero() {
                   start()
                 }
               }}
-              placeholder="Ask AI Labs to build a dashboard for my coffee shop..."
+              placeholder="Ask Purple to build a dashboard for my coffee shop..."
               className="w-full flex-1 resize-none bg-transparent text-left text-sm text-foreground placeholder:text-muted-foreground focus:outline-none"
             />
             <div className="flex items-center justify-between">

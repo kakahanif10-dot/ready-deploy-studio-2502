@@ -8,7 +8,7 @@ import { HowItWorks } from "@/components/landing/how-it-works";
 import { PricingCta } from "@/components/landing/pricing-cta";
 import { SiteFooter } from "@/components/landing/site-footer";
 
-const title = "AI Labs Inc. — Build software with AI";
+const title = "Purple — Build software with AI";
 const description =
   "Describe your idea in plain language and watch it become a real, deployable app with instant preview and one-click deploy.";
 
