@@ -1,10 +1,10 @@
-# Ready Deploy Studio
+# Purple
 
 Import and set up this project from the attached archive, preserving its exact layout, features, and styling, and ensure it is ready to run and deploy.
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://ready-deploy-studio-2502.lovable.app
+**Live app**: https://purple.lovable.app
 
 ## Build with Lovable
 

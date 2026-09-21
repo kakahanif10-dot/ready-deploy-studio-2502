@@ -1,4 +1,4 @@
-// AI LABS INC. — Conversational consultant endpoint.
+// PURPLE — Conversational consultant endpoint.
 // Powers real, responsive back-and-forth chat with the AI consultant (distinct
 // from /api/generate, which compiles a full app spec). Runs on the AI SDK
 // through the Vercel AI Gateway (zero-config auth, no provider key) and always
@@ -86,7 +86,7 @@ async function streamReply(
   }
 
   // Every model failed — degrade to a local reply, streamed for a human feel.
-  console.error('[ai-labs] All Gemini models failed, using local fallback:', errors.join(' | '))
+  console.error('[purple] All Gemini models failed, using local fallback:', errors.join(' | '))
   const reply = localReply(spec, turns)
   for (const word of reply.split(' ')) {
     controller.enqueue(encoder.encode(word + ' '))
@@ -138,7 +138,7 @@ async function POST(req: Request) {
     async start(controller) {
       try {
         const source = await streamReply(spec, turns, controller, encoder)
-        console.log('[ai-labs] Chat answered by:', source)
+        console.log('[purple] Chat answered by:', source)
       } catch (error) {
         console.log('[v0] Chat stream failed, using local reply:', (error as Error)?.message)
         controller.enqueue(encoder.encode(localReply(spec, turns)))

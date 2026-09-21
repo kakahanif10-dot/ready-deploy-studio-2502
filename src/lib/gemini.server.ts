@@ -73,7 +73,7 @@ async function callGemini(path: string, opts: GeminiOptions, query = '') {
 
   if (!res.ok) {
     const detail = await res.text().catch(() => '')
-    console.error(`[ai-labs] Gemini ${opts.model} ${path} -> ${res.status}: ${detail.slice(0, 300)}`)
+    console.error(`[purple] Gemini ${opts.model} ${path} -> ${res.status}: ${detail.slice(0, 300)}`)
     throw new Error(`Gemini ${res.status}: ${detail.slice(0, 300)}`)
   }
   return res

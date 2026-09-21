@@ -17,7 +17,7 @@ import {
   ChevronRight,
   ChevronDown,
 } from 'lucide-react'
-import { AiLabsMark } from '@/components/purple-logo'
+import { PurpleMark } from '@/components/purple-logo'
 import { cn } from '@/lib/utils'
 import type { DesignSpec, Template } from '@/lib/design'
 
@@ -119,7 +119,7 @@ export function WorkspaceSidebar({
       {/* Brand + collapse */}
       <div className="flex h-14 items-center justify-between px-3">
         <div className="flex items-center gap-2 overflow-hidden">
-          <AiLabsMark className="h-8 w-8 shrink-0" />
+          <PurpleMark className="h-8 w-8 shrink-0" />
           <AnimatePresence>
             {!collapsed && (
               <motion.span

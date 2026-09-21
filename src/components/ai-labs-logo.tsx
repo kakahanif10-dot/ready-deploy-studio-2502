@@ -1,1 +1,0 @@
-export { PurpleLogo as AiLabsLogo, PurpleMark as AiLabsMark } from "@/components/purple-logo"\n

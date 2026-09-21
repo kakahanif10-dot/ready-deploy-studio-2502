@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion'
 import { Circle } from 'lucide-react'
 
@@ -12,6 +13,7 @@ export function Showcase() {
           transition={{ duration: 0.6 }}
           className="relative rounded-2xl border border-border bg-card/60 p-2 backdrop-blur-xl glow-border"
         >
+          {/* Window chrome */}
           <div className="flex items-center gap-2 px-3 py-2.5">
             <span className="h-3 w-3 rounded-full bg-destructive/70" />
             <span className="h-3 w-3 rounded-full bg-primary/70" />
@@ -22,6 +24,7 @@ export function Showcase() {
             </div>
           </div>
 
+          {/* Split view: chat + preview */}
           <div className="grid gap-2 overflow-hidden rounded-xl md:grid-cols-[1fr_1.4fr]">
             <div className="flex flex-col gap-3 bg-background/40 p-4">
               <ChatBubble side="user">
@@ -50,7 +53,7 @@ export function Showcase() {
                   {[0, 1, 2].map((i) => (
                     <div key={i} className="rounded-md border border-border bg-background/50 p-3">
                       <div className="h-10 w-full rounded bg-foreground/10" />
-                      <div className="mt-2.5 h-2.5 w-3/4 rounded bg-muted-foreground/25" />
+                      <div className="mt-2 h-2.5 w-3/4 rounded bg-muted-foreground/25" />
                       <div className="mt-1.5 h-2.5 w-1/2 rounded bg-muted-foreground/15" />
                     </div>
                   ))}

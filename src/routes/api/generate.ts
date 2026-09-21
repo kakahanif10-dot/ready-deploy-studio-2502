@@ -1,4 +1,4 @@
-// AI LABS INC. (c) 2026 — Universal Context-Aware UI/UX Engine.
+// PURPLE (c) 2026 — Universal Context-Aware UI/UX Engine.
 // Detects the industry from any prompt (any language) and emits an
 // industry-aware app spec: functional multi-page template + matching palette
 // + industry-specific catalog. Rendered 100% client-side (0 MB server storage).
@@ -570,7 +570,7 @@ async function POST(req: Request) {
     return Response.json({
       success: true,
       company: 'Purple',
-      model: 'ai-labs/arcade',
+      model: 'purple/arcade',
       engine: 'arcade',
       spec: gameSpec(game),
     })
@@ -619,7 +619,7 @@ async function POST(req: Request) {
     return Response.json({
       success: true,
       company: 'Purple',
-      model: 'ai-labs/local-heuristic',
+      model: 'purple/local-heuristic',
       engine: 'local',
       spec,
     })

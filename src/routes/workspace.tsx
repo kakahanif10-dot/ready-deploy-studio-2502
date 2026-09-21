@@ -28,7 +28,7 @@ import {
   WorkspaceSidebar,
   type SidebarTab,
 } from '@/components/workspace/workspace-sidebar'
-import { AiLabsLogo } from '@/components/ai-labs-logo'
+import { PurpleLogo } from '@/components/purple-logo'
 import { DEFAULT_SPEC, type DesignSpec } from '@/lib/design'
 import {
   COMPILE_DURATION_MS,
@@ -47,7 +47,7 @@ type Session = {
   updated: number
 }
 
-const STORE_KEY = 'ai-labs.sessions.v1'
+const STORE_KEY = 'purple.sessions.v1'
 
 // Persist sessions as a base64 string — lightweight, client-only, 0 MB server storage.
 function encode(sessions: Session[]): string {
@@ -386,7 +386,7 @@ function WorkspacePage() {
       <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
         {/* Top bar */}
         <header className="flex h-14 shrink-0 items-center justify-between border-b border-border px-5">
-          <AiLabsLogo markClassName="h-7 w-7" />
+          <PurpleLogo markClassName="h-7 w-7" />
           <div className="flex items-center gap-3 text-xs text-muted-foreground">
             <span className="hidden items-center gap-1.5 sm:flex">
               <span className="h-1.5 w-1.5 rounded-full bg-foreground" />

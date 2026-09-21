@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowUp, Paperclip, Smartphone, Sparkles } from 'lucide-react'
-import { AiLabsMark } from '@/components/ai-labs-logo'
+import { PurpleMark } from '@/components/purple-logo'
 import { cn } from '@/lib/utils'
 
 export type ChatMessage = {
@@ -56,7 +56,7 @@ export function ChatPanel({
               exit={{ opacity: 0 }}
               className="flex gap-3"
             >
-              <AiLabsMark className="h-7 w-7 shrink-0" />
+              <PurpleMark className="h-7 w-7 shrink-0" />
               <div className="flex items-center gap-2 pt-1 text-sm text-muted-foreground">
                 <span className="inline-flex gap-1">
                   <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-primary [animation-delay:-0.2s]" />
@@ -136,7 +136,7 @@ function Message({ message }: { message: ChatMessage }) {
       {isUser ? (
         <span className="mt-0.5 h-7 w-7 shrink-0 rounded-full bg-secondary" />
       ) : (
-        <AiLabsMark className="mt-0.5 h-7 w-7 shrink-0" />
+        <PurpleMark className="mt-0.5 h-7 w-7 shrink-0" />
       )}
       <div className={cn('max-w-[85%]', isUser && 'text-right')}>
         <div

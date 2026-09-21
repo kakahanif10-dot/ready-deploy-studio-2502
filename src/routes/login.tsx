@@ -21,7 +21,7 @@ export const Route = createFileRoute('/login')({
 
 import Link from '@/components/link'
 import { ArrowLeft } from 'lucide-react'
-import { AiLabsLogo } from '@/components/ai-labs-logo'
+import { PurpleLogo } from '@/components/purple-logo'
 import { AuthForm } from '@/components/auth/auth-form'
 
 function LoginPage() {
@@ -30,7 +30,7 @@ function LoginPage() {
       {/* Left brand panel */}
       <div className="relative hidden w-1/2 flex-col justify-between overflow-hidden border-r border-border p-10 lg:flex">
         <Link href="/" className="relative">
-          <AiLabsLogo />
+          <PurpleLogo />
         </Link>
 
         <div className="relative max-w-md">
@@ -67,7 +67,7 @@ function LoginPage() {
         </Link>
 
         <div className="mb-8 lg:hidden">
-          <AiLabsLogo />
+          <PurpleLogo />
         </div>
 
         <AuthForm />

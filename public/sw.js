@@ -1,6 +1,6 @@
 // Minimal service worker so the app is installable as a PWA.
 // Network-first with an offline fallback to the cached start URL.
-const CACHE = 'ai-labs-v1'
+const CACHE = 'purple-v1'
 const APP_SHELL = ['/workspace']
 
 self.addEventListener('install', (event) => {

@@ -140,7 +140,7 @@ export function AuthForm() {
       </div>
 
       <p className="mt-5 text-center text-xs leading-relaxed text-muted-foreground">
-        By continuing you agree to Purple&apos;s Terms of Service and Privacy
+        By continuing you agree to Purple&apos; Terms of Service and Privacy
         Policy.
       </p>
     </div>

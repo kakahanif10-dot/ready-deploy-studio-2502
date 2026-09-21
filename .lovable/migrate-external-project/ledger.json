@@ -1,0 +1,96 @@
+{
+  "source": "https://github.com/kakahanif10-dot/ready-deploy-studio-2502",
+  "capabilities": [
+    {
+      "capability": "application code and routes",
+      "source": "GitHub repository",
+      "outcome": "preserve",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "database schema",
+      "source": "none detected",
+      "outcome": "not_applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "database records",
+      "source": "none detected",
+      "outcome": "not_applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "authentication identities",
+      "source": "simulated client-side sign-in",
+      "outcome": "preserve",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "authorization",
+      "source": "none detected",
+      "outcome": "not_applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "uploaded file bytes",
+      "source": "repository assets and supplied Purple brand image",
+      "outcome": "preserve",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "external AI provider",
+      "source": "Google Gemini",
+      "outcome": "preserve",
+      "status": "implemented",
+      "next_action": "live verification requires an existing Gemini key"
+    },
+    {
+      "capability": "public endpoints",
+      "source": "/api/generate and /api/chat",
+      "outcome": "preserve",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "callbacks and webhooks",
+      "source": "none detected",
+      "outcome": "not_applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "schedules",
+      "source": "none detected",
+      "outcome": "not_applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "secrets",
+      "source": "VITE_GEMINI_API_KEY",
+      "outcome": "preserve",
+      "status": "blocked",
+      "next_action": "provide securely if not already configured"
+    },
+    {
+      "capability": "cutover and publishing",
+      "source": "Lovable deployment",
+      "outcome": "replace",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "verification",
+      "source": "preview and build telemetry",
+      "outcome": "preserve",
+      "status": "verified",
+      "next_action": "none"
+    }
+  ]
+}

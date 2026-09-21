@@ -29,8 +29,8 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent: var(--sidebar-accent);
 
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Plus Jakarta Sans", ui-monospace, monospace;
 
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -53,8 +53,8 @@
   --popover-foreground: oklch(0.985 0 0);
 
   /* Primary button: solid white with black text */
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.58 0.245 292);
+  --primary-foreground: oklch(0.99 0 0);
 
   --secondary: oklch(0.225 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -62,15 +62,15 @@
   --muted: oklch(0.225 0 0);
   --muted-foreground: oklch(0.65 0 0);
 
-  --accent: oklch(0.985 0 0);
-  --accent-foreground: oklch(0.145 0 0);
+  --accent: oklch(0.62 0.26 292);
+  --accent-foreground: oklch(0.99 0 0);
 
   --destructive: oklch(0.985 0 0);
 
   /* Seamless subtle grey borders (white at low opacity) */
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 12%);
-  --ring: oklch(1 0 0 / 20%);
+  --ring: oklch(0.62 0.26 292 / 55%);
 
   --radius: 0.75rem;
 
@@ -80,11 +80,11 @@
   --sidebar-accent: oklch(0.225 0 0);
 
   /* Brand wordmark: flat pure white (no gradient) */
-  --brand-from: #ffffff;
-  --brand-to: #ffffff;
+  --brand-from: oklch(0.59 0.25 292);
+  --brand-to: oklch(0.66 0.28 300);
 
   /* Single very subtle accent — used only on one word, hover, and active states */
-  --accent-glow: oklch(0.7 0.13 255);
+  --accent-glow: oklch(0.62 0.26 292);
 }
 
 @layer base {
@@ -134,8 +134,8 @@
 }
 
 ::selection {
-  background: #ffffff;
-  color: #000000;
+  background: var(--primary);
+  color: var(--primary-foreground);
 }
 
 /* Hue rail for the 2D color-area canvas matrix */
