@@ -1,9 +1,10 @@
 import { cn } from '@/lib/utils'
+import transparentLogo from '@/assets/purple-logo-transparent.png.asset.json'
 
 export function PurpleMark({ className }: { className?: string }) {
   return (
     <img
-      src="/purple-icon-512.png"
+      src={transparentLogo.url}
       alt="Purple logo"
       className={cn('inline-block object-contain', className)}
     />
