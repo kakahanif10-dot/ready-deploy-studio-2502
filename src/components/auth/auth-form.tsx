@@ -110,7 +110,7 @@ export function AuthForm() {
           <Button
             type="submit"
             disabled={status !== 'idle'}
-            className="mt-2 h-11 w-full rounded-lg bg-primary font-medium text-primary-foreground hover:opacity-90"
+            className="mt-2 h-11 w-full rounded-lg font-medium text-primary-foreground hover:brightness-110"
           >
             {status === 'loading' && (
               <Loader2 className="mr-1.5 h-4 w-4 animate-spin" />

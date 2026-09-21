@@ -151,7 +151,7 @@ export function WorkspaceSidebar({
         <button
           onClick={onNew}
           className={cn(
-            'flex h-10 w-full items-center gap-2 rounded-lg bg-primary text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90',
+            'brand-gradient-bg flex h-10 w-full items-center gap-2 rounded-lg text-sm font-medium text-primary-foreground transition-all hover:brightness-110',
             collapsed ? 'justify-center px-0' : 'px-3',
           )}
         >

@@ -92,7 +92,7 @@ export function Hero() {
               </button>
               <Button
                 onClick={start}
-                className="rounded-full bg-primary text-primary-foreground transition-all hover:shadow-[0_0_20px_-4px_oklch(1_0_0_/_30%)] active:translate-y-px"
+                className="rounded-full text-primary-foreground transition-all hover:brightness-110 hover:shadow-[0_0_20px_-4px_oklch(1_0_0_/_30%)] active:translate-y-px"
               >
                 Start building
                 <ArrowRight className="h-4 w-4" />

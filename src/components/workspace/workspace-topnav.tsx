@@ -35,7 +35,7 @@ export function WorkspaceTopnav({
         <Button
           onClick={onDeploy}
           disabled={deployState === 'deploying'}
-          className="h-9 gap-1.5 rounded-lg bg-primary font-medium text-primary-foreground hover:opacity-90"
+          className="h-9 gap-1.5 rounded-lg font-medium text-primary-foreground hover:brightness-110"
         >
           {deployState === 'idle' && (
             <>
